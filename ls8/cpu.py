@@ -190,22 +190,19 @@ class CPU:
                 self.pc += 3
             
             elif register == JMP:
-                reg_num = operandA
-                destination = self.reg[reg_num]
+                destination = self.reg[operandA]
                 self.pc = destination
 
             elif register == JNE:
                 if self.flag != 0b00000001:
-                    reg_num = operandA
-                    destination = self.reg[reg_num]
+                    destination = self.reg[operandA]
                     self.pc = destination
                 else:
                     self.pc += 2
 
             elif register == JEQ:
                 if self.flag == 0b00000001:
-                    reg_num = operandA
-                    destination = self.reg[reg_num]
+                    destination = self.reg[operandA]
                     self.pc = destination
                 else:
                     self.pc += 2
